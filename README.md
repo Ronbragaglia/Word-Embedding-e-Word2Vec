@@ -1,33 +1,43 @@
-Observações sobre o Código:
+# Word Embedding e Word2Vec
 
-Importações Necessárias:
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white) ![Topic](https://img.shields.io/badge/Topic-nlp-green) ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-O código começa com a instalação de bibliotecas essenciais (pandas, textblob, matplotlib, seaborn) e as importa para uso posterior.
+## Descrição
 
-Criação do DataFrame:
+Implementação de Word2Vec com o dataset de avaliações de pedidos da Olist para análise semântica de reviews de produtos em português.
 
-Um dicionário data é criado com dados de avaliações (incluindo IDs, pontuações, títulos, mensagens e timestamps).
-Um DataFrame df é gerado a partir do dicionário.
+## Funcionalidades
 
-Função para Análise de Sentimentos:
+- Treinamento de modelo Word2Vec com dados reais da Olist
+- Análise de proximidade semântica entre palavras
+- Exploração de reviews em português
+- Visualização de embeddings em espaço vetorial
+- Consulta de palavras similares (ex: "produto")
 
-A função get_sentiment calcula a polaridade do texto usando a biblioteca TextBlob. Retorna None para valores nulos, permitindo evitar erros ao processar dados faltantes.
+## Stack Tecnológico
 
-Aplicação da Análise de Sentimentos:
+| Tecnologia | Descrição |
+|---|---|
+| Python | Linguagem principal |
+| Gensim | Treinamento do Word2Vec |
+| Pandas | Manipulação do dataset |
+| NumPy | Operações vetoriais |
 
-A coluna 'sentiment' é criada no DataFrame df, onde a função get_sentiment é aplicada à coluna review_comment_message.
+## Como Usar
 
-Visualizações:
+1. Instale as dependências: `pip install gensim pandas`
+2. Adicione o arquivo `olist_order_reviews_dataset.csv` na pasta `data/`
+3. Execute: `python word2vec_olist.py`
 
-Distribuição das Notas de Review: Um gráfico de contagem (countplot) mostra a distribuição das notas de avaliação.
+## Estrutura de Pastas
 
-Distribuição dos Sentimentos: Um histograma (histplot) mostra a distribuição das polaridades dos sentimentos, com uma linha de densidade (KDE) para melhor visualização.
-Exibição do DataFrame:
+```
+├── word2vec_olist.py
+├── data/
+│   └── olist_order_reviews_dataset.csv
+└── requirements.txt
+```
 
-O DataFrame df é exibido no final, mostrando todas as colunas, incluindo a nova coluna 'sentiment'.
+---
 
-![image](https://github.com/user-attachments/assets/e5c1f345-a1dc-41ca-b986-661e90f66e3d)
-
-![image](https://github.com/user-attachments/assets/03093d0a-da87-41ce-b57e-7ab1c5935bb4)
-
-![image](https://github.com/user-attachments/assets/c0ac596a-4192-47a0-bcd3-ecf24100de32)
+> Feito com ❤️ por Rone Bragaglia · ML Engineer & Fundador CobrançaAuto
